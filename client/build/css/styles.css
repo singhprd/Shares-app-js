@@ -1,0 +1,5 @@
+#market-table {
+  display: block;
+  height: 350px;
+  overflow-y: scroll;
+}
