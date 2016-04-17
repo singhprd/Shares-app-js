@@ -3,9 +3,9 @@ var createTable = function(toAppend, array) {
   table.classList.add('pure-table')
   table.id = "market-table";
 
-  table.onclick = function(e){
-    console.log(e.path[1])
-  }
+  // table.onclick = function(e){
+  //   console.log(e.path[1])
+  // }
 
   toAppend.appendChild(table);
   for (var i = array.length - 1; i >= 0; i--) {
@@ -15,7 +15,7 @@ var createTable = function(toAppend, array) {
     td.innerText = array[i].epic;
     tr.appendChild(td);
     var td = document.createElement('td');
-    td.innerText = array[i].price;
+    td.innerText = array[i].name;
     tr.appendChild(td);
   }
 };

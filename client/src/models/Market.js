@@ -19,6 +19,8 @@ Market.prototype.getData = function(callback){
       var stock1 = new Stock(marketData[i]);
       that.stocks.push(stock1);
     }
+    window.localStorage.clear();
+    window.localStorage.setItem(that.symbol, request.responseText);
     callback();
   };
   request.send();
