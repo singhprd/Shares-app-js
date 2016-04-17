@@ -4,8 +4,9 @@ var Portfolio = require('./models/portfolio.js');
 var Market = require('./models/market.js');
 var navBar = require('./views/nav_bar.js');
 // views
-var createTable = require('./views/createTable.js')
-var createGraph = require('./views/createGraph.js')
+var createTable = require('./views/createTable.js');
+var createGraph = require('./views/createGraph.js');
+var createStockInfoTable = require('./views/createStockInfoTable.js');
 
 window.onload = function() {
   // get elements
@@ -24,13 +25,14 @@ window.onload = function() {
   navBar(navDiv);
   // create a market
   var FTSE350 = new Market();
-      
+
   FTSE350.getData(function(){
+    createTable(left, FTSE350.stocks);
     left.onclick = function(e){
       var clickedEpic = e.path[1].firstChild.innerHTML;
       createGraph(right, clickedEpic);
+      createStockInfoTable(right, clickedEpic);
     }
-    createTable(left, FTSE350.stocks);
   });
 
 };

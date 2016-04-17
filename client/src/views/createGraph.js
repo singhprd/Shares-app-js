@@ -1,8 +1,8 @@
 var Highcharts = require('highcharts');
+var findStock = require('../utils/findStock.js');
 
 var createGraph = function(container, epic) {
   var marketData = JSON.parse(localStorage.FTSE);
-
   var findStock = function(marketData, epic) {
       for (var i = marketData.length - 1; i >= 0; i--) {
       if(marketData[i].epic === epic){

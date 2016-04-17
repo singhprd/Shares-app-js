@@ -3,3 +3,11 @@
   height: 350px;
   overflow-y: scroll;
 }
+
+#stock-info-table {
+  display: block;
+  width: 100%;
+  overflow-y: scroll;
+  font-size: 12px;
+}
+
