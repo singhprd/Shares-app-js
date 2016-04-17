@@ -4,10 +4,10 @@ A webpage made with JS that shows all the stocks in the FTSE350. A chart of the 
 
 This app uses the Yahoo Finance API and makes seperate calls to get stock information and to get historical information for each stock. Highcharts is used for the graphs.
 
-#install
+#Install
 
-###in both client and sever folders from the terminal:
+###In both client and sever folders from the terminal:
   1. npm install
   2. npm start
   
-navigate to localhost:3000.
+Now navigate to localhost:3000 in a web browser.
