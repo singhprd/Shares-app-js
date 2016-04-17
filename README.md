@@ -6,8 +6,8 @@ This app uses the Yahoo Finance API and makes seperate calls to get stock inform
 
 #install
 
-in both client and sever folders from the terminal:
-  npm install
-  npm start
+###in both client and sever folders from the terminal:
+  1. npm install
+  2. npm start
   
 navigate to localhost:3000.
