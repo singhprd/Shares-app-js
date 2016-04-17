@@ -27,20 +27,25 @@ window.onload = function() {
   var FTSE350 = new Market();
 
   FTSE350.getData(function(){
-  createTable(left, FTSE350.stocks);
-  var marketTable = document.getElementById('market-table');
-  marketTable.onclick = function(e){
-    for (var i = marketTable.childNodes.length - 1; i >= 0; i--) {
-        marketTable.childNodes[i].style = "background-color: white;"
-    }
-    var clickedEpic = e.path[1].firstChild.innerHTML;
-    var a = e.path[1]
-    a.style = "background-color: blue;"
-    var table = document.getElementById("market-table");
-    createGraph(right, clickedEpic);
-    createStockInfoTable(right, clickedEpic);
-  };
+    createTable(left, FTSE350.stocks);
+    var marketTable = document.getElementById('market-table');
 
+    marketTable.onclick = function(e){
+      var b = e.path[0];
+      if(b.toString() === "[object HTMLTableElement]"){
+
+      } else {
+        for (var i = marketTable.childNodes.length - 1; i >= 0; i--) {
+          marketTable.childNodes[i].style = "background-color: white;"
+        }
+        var clickedEpic = e.path[1].firstChild.innerHTML;
+        var a = e.path[1]
+        a.style = "background-color: #003399; color: white;"
+        var table = document.getElementById("market-table");
+        createGraph(right, clickedEpic);
+        createStockInfoTable(right, clickedEpic);
+      }
+    };
     // show graph and table onload - RBS is default
     createGraph(right, 'RBS');
     createStockInfoTable(right, 'RBS');
